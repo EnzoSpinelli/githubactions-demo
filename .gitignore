@@ -1,0 +1,21 @@
+# Ignorar diretórios do Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+
+# Ignorar logs e arquivos temporários
+*.log
+*.tmp
+*.swp
+
+# Ignorar configurações de IDEs (VS Code, PyCharm, etc.)
+.vscode/
+.idea/
+
+# Ignorar arquivos do Docker
+*.tar
+docker-compose.override.yml
+
+# Ignorar arquivos de ambiente
+.env
