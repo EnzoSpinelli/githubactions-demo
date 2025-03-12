@@ -1,0 +1,33 @@
+name: Teste Automático
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.11.2"
+
+      - name: Instalar dependências
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install pytest
+
+      - name: Rodar Testes
+        run: |
+          source venv/bin/activate
+          pytest
